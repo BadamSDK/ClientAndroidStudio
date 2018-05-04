@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ziipin.pay.sdk.library" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+    <!-- cafe bazaar 的权限申请 -->
+    <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR" />
+
+    <!-- 话费支付所需要的权限 start -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" /> <!-- 话费支付所需要的权限 end -->
+    <!-- 爱贝支付所需要的权限 start -->
+    <!-- 银联相关配置 -->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.hardware.nfc.hce" /> <!-- 银联相关配置 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- 银联相关配置 -->
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 外部存储 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true" >
+
+        <!-- 话费支付设置 start -->
+        <!-- 边晓峰 -->
+        <activity
+            android:name="com.arcsoft.hpay100.HPaySdkActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@style/hpay_dialog_style" >
+        </activity>
+        <activity
+            android:name="com.arcsoft.hpay100.web.HPayWebActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@style/hpay_custom_confim_dialog" >
+        </activity>
+        <activity
+            android:name="com.arcsoft.hpay100.web.HPayWebFullActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation" >
+        </activity>
+
+        <service android:name="com.arcsoft.hpay100.client.HClientService" >
+            <intent-filter>
+                <action android:name="com.hclient.sdk.clientService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.arcsoft.hpay100.client.HClientReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+            </intent-filter>
+        </receiver> <!-- 话费支付设置 end -->
+        <!-- 爱贝支付设置 start -->
+        <!-- 爱贝 -->
+        <!-- 银联支付相关配置 -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" /> <!-- 网页显示界面 -->
+        <activity
+            android:name="com.iapppay.sdk.main.WebActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.iapppay.ui.activity.PersonCenterActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 收银台普通界面 -->
+        <activity
+            android:name="com.iapppay.ui.activity.PayHubActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 选择充值金额界面 -->
+        <activity
+            android:name="com.iapppay.ui.activity.SelectAmountActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.iapppay.ui.activity.ChargeActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 游戏卡和话费卡充值界面 -->
+        <activity
+            android:name="com.iapppay.ui.card.GamepayActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- alipay sdk begin (新的支付宝) -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" /> <!-- alipay sdk end -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" /> <!-- 银联3.3.3start -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+    </application>
+
+</manifest>

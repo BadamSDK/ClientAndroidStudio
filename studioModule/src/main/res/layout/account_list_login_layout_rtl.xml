@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_account_login"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/account_login"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_badam_game"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:text="@string/badam_game"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/icon_back_right" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/lv_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:descendantFocusability="beforeDescendants"
+            android:listSelector="@drawable/course_list_selector" />
+
+        <LinearLayout
+            android:id="@+id/ll_other_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/course_list_selector"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_other_account_login"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/other_account_login"
+                android:textColor="@color/color_black" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/add_btn_selector" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_login_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/orange_btn_bg"
+        android:text="@string/login_game"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:weightSum="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/go_register"
+            android:textColor="@color/white" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

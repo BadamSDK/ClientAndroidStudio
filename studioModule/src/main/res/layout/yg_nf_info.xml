@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	 >
+	 <ImageView
+        android:id="@+id/yg_nf_ctl_Bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+	<ImageView
+        android:id="@+id/yg_nf_ctl_Image"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:padding="3dp"
+        android:fitsSystemWindows="true"
+        android:src="@android:drawable/stat_sys_download" 
+        />
+
+    <TextView
+        android:id="@+id/yg_nf_ctl_Title"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/yg_nf_ctl_Image"
+        android:paddingLeft="6dp"
+        android:maxLines="1"
+        android:textColor="#FFFFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/yg_nf_ctl_Content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:maxLines="2"
+        android:layout_toRightOf="@id/yg_nf_ctl_Image"
+        android:paddingLeft="6dp"
+        android:paddingBottom="3dp"
+        android:gravity="bottom|left"
+        android:layout_below="@id/yg_nf_ctl_Title"
+        android:textColor="#FFFFFFFF" />
+
+	
+</RelativeLayout>

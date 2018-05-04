@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/short_term_pay"/>
+
+
+    <ImageView
+        android:id="@+id/discount_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/discount"
+        android:layout_alignRight="@+id/discount"
+        android:layout_alignTop="@+id/discount"
+        android:scaleType="centerCrop"
+        android:src="@drawable/discount_bg"/>
+
+    <TextView
+        android:id="@+id/discount"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingLeft="8dp"
+        android:paddingRight="10dp"
+        android:text="多送20%金币"
+        android:textColor="#fff"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/pay_way_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-5dp"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:text="支付宝"
+        android:textColor="#fff"
+        android:textSize="12sp"/>
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/btn_sdk_enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Badam SDK 入口" />
+
+    <Button
+        android:id="@+id/btn_quick_login_sdk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="快速登录Badam SDK " />
+
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="支付" />
+
+
+</LinearLayout>
