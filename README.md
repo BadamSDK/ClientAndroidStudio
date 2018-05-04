@@ -1,5 +1,9 @@
 ### Android Studio 接入BadamSdk Demo
-Android Studio 有两种方式导入BadamSdk(下称SDK):1.以 .aar 包的方式作为 `com.android.application` 的一个依赖包接入,2. 将 SDK 作为一个 module, 以 `com.android.library` 的方式接入。下面将详尽地说明这两种接入方式的具体过程
+Android Studio 有两种方式导入BadamSdk(下称SDK):
+1. 以 .aar 包的方式作为 `com.android.application` 的一个依赖包接入
+2. 将 SDK 作为一个 module, 以 `com.android.library` 的方式接入。
+
+下面将详尽地说明这两种接入方式的具体过程
 
 ### 以 .aar 包的方式接入
 .aar 包方式接入请参考 `studioDemo` 种的使用方式, 在自己项目中使用时，请阅读 [参考文档](https://sdk-doc.badambiz.com/chapter1-started/step2.1.html)中 2.1.2.1，2.1.2.2节的说明。在这里，我们在目录 `studioRes` 目录中为你准备了接入SDK所需要的文件:
