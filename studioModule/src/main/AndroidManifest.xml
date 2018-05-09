@@ -41,36 +41,6 @@
         android:allowBackup="true"
         android:supportsRtl="true" >
 
-        <!-- 话费支付设置 start -->
-        <!-- 边晓峰 -->
-        <activity
-            android:name="com.arcsoft.hpay100.HPaySdkActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:theme="@style/hpay_dialog_style" >
-        </activity>
-        <activity
-            android:name="com.arcsoft.hpay100.web.HPayWebActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:theme="@style/hpay_custom_confim_dialog" >
-        </activity>
-        <activity
-            android:name="com.arcsoft.hpay100.web.HPayWebFullActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation" >
-        </activity>
-
-        <service android:name="com.arcsoft.hpay100.client.HClientService" >
-            <intent-filter>
-                <action android:name="com.hclient.sdk.clientService" />
-            </intent-filter>
-        </service>
-
-        <receiver android:name="com.arcsoft.hpay100.client.HClientReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.intent.action.BATTERY_CHANGED" />
-            </intent-filter>
-        </receiver> <!-- 话费支付设置 end -->
         <!-- 爱贝支付设置 start -->
         <!-- 爱贝 -->
         <!-- 银联支付相关配置 -->

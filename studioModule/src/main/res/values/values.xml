@@ -12,14 +12,6 @@
     <color name="edit_view_hint_text_color">#c0c0c5</color>
     <color name="edit_view_text_color">#000000</color>
     <color name="green">#FF00FF00</color>
-    <color name="hpay_bg_color">#FBF6F2</color>
-    <color name="hpay_cancel_wz_color">#737065</color>
-    <color name="hpay_edit_color">#D7CEC5</color>
-    <color name="hpay_getyzm_bg_color">#ECE5DF</color>
-    <color name="hpay_line_color">#E6DED7</color>
-    <color name="hpay_ok_wz_color">#007AFF</color>
-    <color name="hpay_title_color">#737065</color>
-    <color name="hpay_wxts_color">#B7B3AB</color>
     <color name="input_edit_content">#FF5B6E7C</color>
     <color name="input_edit_hint">#BBCBD8</color>
     <color name="input_hint">#FF282828</color>
@@ -412,7 +404,7 @@
     <string name="jd_pay_kk">جيڭ دۇڭ</string>
     <string name="jd_pay_uy">جىڭدۇڭدا تۆلەش </string>
     <string name="library_name">ACTIVITY_ENTRY_NAME</string>
-    <string name="login">LOGIN</string>
+    <string name="login">登录</string>
     <string name="login_fa">ورود</string>
     <string name="login_game">进入游戏 </string>
     <string name="login_game_fa">ورود به بازی</string>
@@ -452,7 +444,7 @@
     <string name="phone_register_fa">ورود با تلفن همراه</string>
     <string name="phone_register_kk">تەلەفون تىركەۋ</string>
     <string name="phone_register_uy">تېلفۇن نومۇردا تىزىملىتىش</string>
-    <string name="play">PLAY>> </string>
+    <string name="play">试玩>> </string>
     <string name="play_fa">امتحان کردن>> </string>
     <string name="play_kk">سىناپ ويناۋ>> </string>
     <string name="play_uy">سىناپ ئويناش>> </string>
@@ -465,7 +457,7 @@
     <string name="qq_pay_fa">کیف پول QQ</string>
     <string name="qq_pay_kk">QQ</string>
     <string name="qq_pay_uy">QQھەميانى</string>
-    <string name="register">REGISTER</string>
+    <string name="register">注册</string>
     <string name="register_fa">ثبت نام</string>
     <string name="register_kk">تىركەلۋ</string>
     <string name="register_success">注册成功！</string>
@@ -542,33 +534,6 @@
     <style name="edit_view_style">
         <item name="android:textColor">@color/edit_view_text_color</item>
         <item name="android:textColorHint">@color/edit_view_hint_text_color</item>
-    </style>
-    <style name="hpay_custom_confim_dialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:backgroundDimAmount">0.6</item>
-    </style>
-    <style name="hpay_dialog_style" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-    </style>
-    <style name="hpay_progress_dialog" parent="android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">#00000000</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:backgroundDimEnabled">false</item>
     </style>
     <style name="input_left_edit_text_style" parent="edit_view_style">
         <item name="android:layout_height">50dp</item>
