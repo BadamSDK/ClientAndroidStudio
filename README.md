@@ -1,3 +1,5 @@
+### SDK 获取
+目录 `studioRes` 下的文件为 Android Studio 接入 BadamSDK 所需的 `.arr` 包以及相关的一些资源文件，若需参考，请阅读 `studioDemo` 中的相关代码示例
 ### Android Studio 接入BadamSdk Demo
 Android Studio 有两种方式导入BadamSdk(下称SDK):
 1. 以 .aar 包的方式作为 `com.android.application` 的一个依赖包接入
