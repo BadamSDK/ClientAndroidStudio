@@ -39,9 +39,17 @@
 
     <application
         android:allowBackup="true"
+        android:label="@string/app_name"
         android:supportsRtl="true" >
+        <receiver android:name="com.ziipin.apkmanager.manager.PackageReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
 
-        <!-- 话费支付设置 start -->
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver> <!-- 话费支付设置 start -->
         <!-- 边晓峰 -->
         <activity
             android:name="com.arcsoft.hpay100.HPaySdkActivity"

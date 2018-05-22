@@ -29,8 +29,6 @@ import java.util.Locale;
 
 public class PayActivity extends Activity implements PayResultListener, InitListener{
 
-    private static final String mAppId = MainActivity.mAppId;
-    private static final String mApiSecret = MainActivity.mApiSecret;
     private static final int LANG = MainActivity.LANG;
     private int mAmount;
     private String mUserData;
@@ -60,7 +58,7 @@ public class PayActivity extends Activity implements PayResultListener, InitList
             Toast.makeText(this,"未登录，请先登录再支付！",Toast.LENGTH_LONG).show();
         }
         // 支付初始化
-        sdk.initActivity(this, mAppId, mApiSecret, LANG, this);
+        sdk.initActivity(this, LANG, this);
 
     }
 

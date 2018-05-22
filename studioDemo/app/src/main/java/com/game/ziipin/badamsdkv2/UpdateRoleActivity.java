@@ -31,7 +31,7 @@ public class UpdateRoleActivity extends Activity {
 
         final UserBean user = (UserBean) getIntent().getSerializableExtra("user");
 
-        BadamSdk.getInstance().initActivity(this, MainActivity.mAppId, MainActivity.mApiSecret, MainActivity.LANG, new InitListener() {
+        BadamSdk.getInstance().initActivity(this,  MainActivity.LANG, new InitListener() {
             @Override
             public void onInitResult(boolean success, int erro, String message) {
                 Logger.debug( success ? "初始化成功" : "初始化失败" + message);
@@ -56,7 +56,7 @@ public class UpdateRoleActivity extends Activity {
 
 
                 UserReq req = new UserReq(UpdateRoleActivity.this);
-                req.appid = MainActivity.mAppId;
+                req.appid = BaseApp.mAppId;
                 req.openid = user.openid;
                 req.token = user.token;
                 req.roleid = "1234";//角色ID 客户端提供

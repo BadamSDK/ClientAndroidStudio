@@ -72,6 +72,13 @@
 -keep class com.ziipin.pay.sdk.publish.inner.sdkprocessor.**{*;}
 -keep class com.ziipin.pay.sdk.publish.common.**{*;}
 
+# 广告相关
+-keep class com.ziipin.pay.sdk.publish.AdFragment
+-keep class com.ziipin.pay.sdk.publish.api.event.**{*;}
+-keep class com.ziipin.pay.sdk.publish.ApkCreator {*;}
+-keep class com.ziipin.pay.sdk.publish.ApkModel {*;}
+
+
 #话费
 -keep class com.arcsoft.hpay100.**{*;}
 

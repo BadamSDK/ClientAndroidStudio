@@ -37,16 +37,14 @@
         android:label="@string/app_name"
         android:name=".BaseApp"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Light.NoTitleBar"
-        >
-
-        <activity android:name=".MainActivity">
+        android:theme="@android:style/Theme.Light.NoTitleBar">
+        <activity android:name="com.ziipin.pay.sdk.library.ui.BadamAdActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
 
         <activity android:name=".PayActivity"/>
         <activity android:name=".UpdateRoleActivity"/>
