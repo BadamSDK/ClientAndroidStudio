@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr format="string" name="badamDrawable"/>
+    <attr format="boolean" name="isRtl"/>
+    <attr format="reference" name="themeDrawable"/>
+    <attr format="color" name="themeTextColor"/>
     <color name="back_button_focus">#FFFBD893</color>
     <color name="back_button_normal">#FFFFFFFF</color>
     <color name="back_button_shadow_focus">#FF359FFF</color>
@@ -44,7 +48,8 @@
     <color name="ipay_transparent">#00000000</color>
     <color name="ipay_transparent_45">#72000000</color>
     <color name="ipay_transparent_75">#bf000000</color>
-    <color name="layout_color">#2c2c2c</color>
+    <color name="layout_color">#ffffff</color>
+    <color name="light">@color/text_light</color>
     <color name="light_gray">#c0c0c5</color>
     <color name="lt_transparent_background">#00FFFFFF</color>
     <color name="orange">#ff9718</color>
@@ -56,9 +61,32 @@
     <color name="query_list_odd_bg">#FFE6EFF6</color>
     <color name="red">#f00</color>
     <color name="tab_font">#FF086DBA</color>
+    <color name="text_dark">#cc000000</color>
+    <color name="text_hint">#66000000</color>
+    <color name="text_light">#ffffffff</color>
+    <color name="text_theme">#cc32aaff</color>
+    <color name="theme">@color/text_theme</color>
     <color name="transparent_background">#00FFFFFF</color>
     <color name="user_hint">#29323B</color>
     <color name="white">#ffffff</color>
+    <dimen name="badam_badam_router_text_size">16sp</dimen>
+    <dimen name="badam_btn_height">48dp</dimen>
+    <dimen name="badam_btn_height_small">35dp</dimen>
+    <dimen name="badam_btn_height_tiny">30dp</dimen>
+    <dimen name="badam_btn_radius">24dp</dimen>
+    <dimen name="badam_btn_radius_tiny">15dp</dimen>
+    <dimen name="badam_btn_row_gap">15dp</dimen>
+    <dimen name="badam_btn_text_size">18sp</dimen>
+    <dimen name="badam_btn_text_size_small">14sp</dimen>
+    <dimen name="badam_btn_text_size_tiny">12sp</dimen>
+    <dimen name="badam_dialog_padding_lr">12dp</dimen>
+    <dimen name="badam_input_item_height">60dp</dimen>
+    <dimen name="badam_input_text_size">15sp</dimen>
+    <dimen name="badam_line_height">0.5dp</dimen>
+    <dimen name="badam_padding_lr">12dp</dimen>
+    <dimen name="badam_tip_text_size">14sp</dimen>
+    <dimen name="badam_title_text_size">16sp</dimen>
+    <dimen name="badam_top_bar_margin_bottom">30dp</dimen>
     <dimen name="dialog_margin_lr">24dp</dimen>
     <dimen name="dialog_margin_tb">24dp</dimen>
     <dimen name="dialog_max_height">480dp</dimen>
@@ -155,6 +183,7 @@
     <string name="ali_pay_fa">Ali Pay</string>
     <string name="ali_pay_kk">وتەم ٴاميانى</string>
     <string name="ali_pay_uy">ئالپاي</string>
+    <string name="app_name">PackageManager</string>
     <string name="badam_game">巴达木游戏</string>
     <string name="badam_game_fa">بازی بادام</string>
     <string name="badam_game_kk">بادام ويىنى</string>
@@ -175,6 +204,9 @@
     <string name="bound_successful_kk">تەلەفون تىركەلدى!</string>
     <string name="bound_successful_uy">تېلېڧون نومۇرى باغلاش مۇۋەپپەقىيەتلىك بولدى! </string>
     <string name="bound_uy">بۇ تېلېڧون نومۇرى باغلانغان،تېلېڧون نومۇرىنى ئالماشتۇرۇپ باغلاڭ</string>
+    <string name="cancel">取消</string>
+    <string name="cancel_kk">جوق</string>
+    <string name="cancel_uy">ئەمەلدىن قالدۇرۇش</string>
     <string name="check_order">检查订单 …</string>
     <string name="check_order_fa">بررسی سفارش…</string>
     <string name="check_order_kk">تالون تەكسەرىڭىز</string>
@@ -203,6 +235,12 @@
     <string name="dialog_title_fa">پرداخت</string>
     <string name="dialog_title_kk">وتەۋ</string>
     <string name="dialog_title_uy">تۆلەش</string>
+    <string name="download_notify_content">下载:%s</string>
+    <string name="download_notify_content_kk">تۇسىرۋ:%s</string>
+    <string name="download_notify_content_uy">چۈشۈرۈش:%s</string>
+    <string name="download_notify_title">下载提示</string>
+    <string name="download_notify_title_kk">تۇسىرۋ ەسكەرتۋى</string>
+    <string name="download_notify_title_uy">چۈشۈرۈش ئەسكەرتىشى</string>
     <string name="find_back_pwd">找回密码</string>
     <string name="find_back_pwd_fa">بازیابی رمز عبور</string>
     <string name="find_back_pwd_kk">قۇپيا ٴنومىردى تابۋ</string>
@@ -412,7 +450,7 @@
     <string name="jd_pay_kk">جيڭ دۇڭ</string>
     <string name="jd_pay_uy">جىڭدۇڭدا تۆلەش </string>
     <string name="library_name">ACTIVITY_ENTRY_NAME</string>
-    <string name="login">LOGIN</string>
+    <string name="login">登录</string>
     <string name="login_fa">ورود</string>
     <string name="login_game">进入游戏 </string>
     <string name="login_game_fa">ورود به بازی</string>
@@ -432,6 +470,9 @@
     <string name="modify_pwd_success_kk">قۇپيا ٴنومىر وزگەرتىلدى!</string>
     <string name="modify_pwd_success_uy">مەخپىي نومۇرنى ئۆزگەرتىش مۇۋەپپەقىيەتلىك بولدى! </string>
     <string name="modify_pwd_uy">مەخپىي نومۇر ئۆزگەرتىش</string>
+    <string name="not_in_wifi_tips">您当前处于非wifi环境下,继续下载将产会生手机流量,确定继续?</string>
+    <string name="not_in_wifi_tips_kk">سىز wifi عا جالعامادىڭىز ليۋلياڭ كەتەدى جالعاستىراسىزبا ؟</string>
+    <string name="not_in_wifi_tips_uy">سىز ھازىر ئېقىم ھالىتىدە،داۋاملىق چۈشۈرسىڭىز ئېقىم شەكىلىنىدۇ،داۋاملاشتۇرامسىز؟</string>
     <string name="not_null_account_or_pwd">用户名或密码不能为空！</string>
     <string name="not_null_account_or_pwd_fa">نام کاربری و رمز ورود نمی تواند خالی باش</string>
     <string name="not_null_account_or_pwd_kk">اتىڭىز نەمەسە قۇپيا نومىرىڭىز بوس بولسا بولمايدى</string>
@@ -452,7 +493,7 @@
     <string name="phone_register_fa">ورود با تلفن همراه</string>
     <string name="phone_register_kk">تەلەفون تىركەۋ</string>
     <string name="phone_register_uy">تېلفۇن نومۇردا تىزىملىتىش</string>
-    <string name="play">PLAY>> </string>
+    <string name="play">试玩>> </string>
     <string name="play_fa">امتحان کردن>> </string>
     <string name="play_kk">سىناپ ويناۋ>> </string>
     <string name="play_uy">سىناپ ئويناش>> </string>
@@ -465,7 +506,7 @@
     <string name="qq_pay_fa">کیف پول QQ</string>
     <string name="qq_pay_kk">QQ</string>
     <string name="qq_pay_uy">QQھەميانى</string>
-    <string name="register">REGISTER</string>
+    <string name="register">注册</string>
     <string name="register_fa">ثبت نام</string>
     <string name="register_kk">تىركەلۋ</string>
     <string name="register_success">注册成功！</string>
@@ -481,14 +522,23 @@
     <string name="resend_fa">لطفاً کمی بعد دوباره ارسال کنید</string>
     <string name="resend_kk">سەكىنوتتان كەيىن قايتا جولدايدى</string>
     <string name="resend_uy">سىكونتتىن كېيىن قايتا ئەۋەتىلىدۇ</string>
+    <string name="second">%d秒</string>
+    <string name="second_kk">سەكىنوت%d</string>
+    <string name="second_uy">سېكۇنت%d</string>
     <string name="short_term_name">话费</string>
     <string name="short_term_name_fa">هزینه تماس</string>
     <string name="short_term_name_kk">ەلەفون اقى</string>
     <string name="short_term_name_uy">سۆزلىشىش ھەققى</string>
+    <string name="skip">跳过</string>
+    <string name="skip_kk">وتكىزۋ</string>
+    <string name="skip_uy">ئاتلاش</string>
     <string name="union_pay">银联</string>
     <string name="union_pay_fa">شبکه بانکی </string>
     <string name="union_pay_kk">بانكە كارتا</string>
     <string name="union_pay_uy">بانكا بىرلەشمىسى</string>
+    <string name="warm_tips">温馨提示</string>
+    <string name="warm_tips_kk">جىلى ەسكەرتۋ</string>
+    <string name="warm_tips_uy">سەمىمىي ئەسكەرتىش</string>
     <string name="we_chat_pay">微信</string>
     <string name="we_chat_pay_fa">ویچت</string>
     <string name="we_chat_pay_kk">ۇنحات</string>
@@ -525,10 +575,64 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+    <style name="badam_lyout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/layout_bg</item>
+        <item name="android:paddingRight">@dimen/badam_padding_lr</item>
+        <item name="android:paddingLeft">@dimen/badam_padding_lr</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    <style name="badam_router_row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:weightSum">1</item>
+        <item name="android:layout_marginBottom">22dp</item>
+        <item name="android:layout_marginTop">23dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="badam_router_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/badam_badam_router_text_size</item>
+        <item name="android:textColor">@color/theme</item>
+    </style>
+    <style name="badam_top_bar">
+        <item name="android:gravity">left</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">@dimen/badam_top_bar_margin_bottom</item>
+        <item name="android:textSize">@dimen/badam_title_text_size</item>
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+    <style name="badam_top_bar_text">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textSize">@dimen/badam_title_text_size</item>
+    </style>
+    <style name="badam_transparent" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/badam_activity_entry</item>
+        <item name="android:windowExitAnimation">@anim/badam_activity_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/badam_activity_entry</item>
+        <item name="android:activityCloseExitAnimation">@anim/badam_activity_out</item>
+        <item name="android:activityOpenEnterAnimation">@anim/badam_activity_entry</item>
+        <item name="android:activityOpenExitAnimation">@anim/badam_activity_out</item>
+    </style>
     <style name="button_style">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">36dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/badam_btn_height</item>
+        <item name="android:textColor">@color/text_light</item>
+        <item name="android:textSize">@dimen/badam_tip_text_size</item>
         <item name="android:background">@drawable/orange_btn_bg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="themeTextColor">@color/red</item>
+        <item name="isRtl">true</item>
+        <item name="badamDrawable">hello world</item>
     </style>
     <style name="custom_dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -540,8 +644,11 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="edit_view_style">
-        <item name="android:textColor">@color/edit_view_text_color</item>
-        <item name="android:textColorHint">@color/edit_view_hint_text_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/badam_input_item_height</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:background">@null</item>
     </style>
     <style name="hpay_custom_confim_dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -571,13 +678,15 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
     <style name="input_left_edit_text_style" parent="edit_view_style">
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/badam_btn_height</item>
         <item name="android:layout_marginLeft">8dp</item>
         <item name="android:gravity">left|center_vertical</item>
         <item name="android:background">@null</item>
     </style>
     <style name="input_right_edit_text_style" parent="edit_view_style">
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/badam_btn_height</item>
         <item name="android:layout_marginRight">8dp</item>
         <item name="android:gravity">right|center_vertical</item>
         <item name="android:background">@null</item>
@@ -609,8 +718,7 @@
     <style name="myTransparent">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowAnimationStyle">@style/badam_transparent</item>
         <item name="android:editTextColor">@color/edit_view_text_color</item>
         <item name="android:textColorHint">@color/edit_view_hint_text_color</item>
     </style>

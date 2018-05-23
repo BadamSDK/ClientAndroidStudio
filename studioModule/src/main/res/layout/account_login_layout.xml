@@ -3,6 +3,8 @@
     android:id="@+id/ll_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingRight="@dimen/badam_padding_lr"
+    android:paddingLeft="@dimen/badam_padding_lr"
     android:background="@drawable/layout_bg"
     android:orientation="vertical">
 
@@ -10,7 +12,7 @@
         android:id="@+id/ll_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/badam_top_bar_margin_bottom"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
@@ -33,8 +35,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:text="@string/badam_game"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/badam_title_text_size" />
         </LinearLayout>
 
 
@@ -51,53 +53,40 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="@string/account_login"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/badam_title_text_size" />
 
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/light_gray" />
-
 
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_bg"
-        android:orientation="vertical"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp">
+        android:orientation="vertical">
 
         <com.ziipin.pay.sdk.library.widget.BadamEditText
             android:id="@+id/edt_account"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/badam_input_item_height"
             android:background="@null"
             android:drawableRight="@mipmap/delete"
             android:gravity="left|center_vertical"
             android:hint="@string/input_account_hint"
             android:imeOptions="actionNext"
             android:inputType="text"
+            android:textSize="@dimen/badam_input_text_size"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_hint"
             android:paddingLeft="8dp"
             android:paddingRight="20dp"
             android:paddingTop="3dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/light_gray" />
+        <include layout="@layout/badam_horizontal_line"/>
 
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="@dimen/badam_input_item_height">
 
 
             <EditText
@@ -106,6 +95,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
                 android:background="@null"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/badam_input_text_size"
                 android:hint="@string/input_pwd_hint"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword" />
@@ -118,54 +109,31 @@
                 android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
                 android:text="@string/find_back_pwd"
-                android:textColor="@color/color_black" />
+                android:textColor="@color/text_dark" />
         </FrameLayout>
-
+        <include layout="@layout/badam_horizontal_line"/>
 
     </LinearLayout>
 
-
     <Button
         android:id="@+id/btn_login_game"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/orange_btn_bg"
-        android:text="@string/login_game"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        style="@style/button_style"
+        android:text="@string/login_game"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:weightSum="1"
-        android:orientation="horizontal">
+    <LinearLayout style="@style/badam_router_row">
 
         <TextView
             android:id="@+id/tv_phone_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="16dp"
+            style="@style/badam_router_text"
             android:gravity="left"
-            android:text="@string/phone_login"
-            android:textColor="@color/white" />
+            android:text="@string/phone_login"/>
         <View android:layout_width="0dp"
             android:layout_height="5dp"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/tv_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
+            style="@style/badam_router_text"
             android:gravity="right"
-            android:text="@string/go_register"
-            android:textColor="@color/white" />
+            android:text="@string/go_register"/>
     </LinearLayout>
-
-
 </LinearLayout>

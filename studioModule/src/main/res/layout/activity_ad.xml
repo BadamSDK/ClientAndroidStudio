@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--闪屏页面的布局, 仅一个 fragment layout-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/text_dark"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/close_btn"
+        android:padding="@dimen/badam_padding_lr"
+        android:visibility="gone"
+        android:textColor="@color/text_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+</LinearLayout>

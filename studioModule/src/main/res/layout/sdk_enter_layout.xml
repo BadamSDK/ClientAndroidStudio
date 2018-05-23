@@ -4,47 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/layout_bg"
+    android:paddingLeft="@dimen/badam_padding_lr"
+    android:paddingRight="@dimen/badam_padding_lr"
     android:orientation="vertical">
     <TextView
         android:id="@+id/tv_badam_game"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/badam_game"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textColor="@color/text_dark"
+        android:textSize="@dimen/badam_title_text_size" />
 
     <Button
         android:id="@+id/btn_register"
         style="@style/button_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/badam_btn_height"
+        android:layout_marginTop="@dimen/badam_btn_row_gap"
         android:text="@string/register" />
 
     <Button
         android:id="@+id/btn_login"
         style="@style/button_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/badam_btn_height"
+        android:layout_marginTop="@dimen/badam_btn_row_gap"
         android:text="@string/login" />
 
     <TextView
         android:id="@+id/tv_play"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="@dimen/badam_btn_height"
         android:gravity="center"
         android:text="@string/play"
-        android:textColor="@color/white" />
+        android:textColor="@color/theme" />
 </LinearLayout>
