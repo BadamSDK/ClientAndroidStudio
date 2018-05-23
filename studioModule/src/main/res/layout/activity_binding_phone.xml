@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="@dimen/badam_dialog_padding_lr"
-    android:paddingRight="@dimen/badam_dialog_padding_lr"
+    android:background="@drawable/layout_bg"
     android:orientation="vertical"
     android:paddingBottom="10dp">
 
@@ -11,7 +10,6 @@
         android:id="@+id/ll_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/badam_top_bar_margin_bottom"
         android:orientation="horizontal">
 
         <TextView
@@ -21,24 +19,28 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/binding_phone"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
 
     </LinearLayout>
 
-   <!-- <View
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@+id/ll_content"
         android:layout_below="@+id/ll_title"
-        android:background="@color/light_gray" />-->
+        android:background="@color/light_gray" />
 
 
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_bg"
         android:orientation="vertical"
         android:paddingBottom="5dp"
@@ -48,7 +50,8 @@
         <EditText
             android:id="@+id/edt_phone_number"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/badam_input_item_height"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
             android:background="@null"
             android:hint="@string/input_phone_hint"
             android:imeOptions="actionDone"
@@ -56,13 +59,13 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/badam_line_height"
+            android:layout_height="1dp"
             android:background="@color/light_gray" />
 
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/badam_input_item_height">
+            android:layout_height="50dp">
 
 
             <EditText
@@ -78,13 +81,12 @@
             <Button
                 android:id="@+id/btn_get_code"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/badam_btn_height_tiny"
+                android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/orange_circle_btn_bg"
                 android:text="@string/get_verification_code"
-                android:textColor="@color/orange"
-                android:textSize="@dimen/badam_btn_text_size_tiny" />
+                android:textColor="@color/orange" />
         </FrameLayout>
 
 
@@ -94,14 +96,14 @@
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/badam_btn_height"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:background="@drawable/orange_btn_bg"
-        android:layout_marginTop="35dp"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:text="@string/ok"
         android:textColor="@color/white"
-        android:textSize="@dimen/badam_btn_text_size"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 

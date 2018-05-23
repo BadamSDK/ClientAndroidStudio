@@ -1,42 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_root"
-    style="@style/badam_lyout">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    android:orientation="vertical">
+
     <LinearLayout
         android:id="@+id/ll_title"
-        style="@style/badam_top_bar"
-        android:gravity="right">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
         <TextView
-            style="@style/badam_top_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="@string/account_register"/>
-        <include layout="@layout/badam_vertical_line"/>
+            android:text="@string/account_register"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:background="@color/white" />
+
         <LinearLayout
             android:id="@+id/ll_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                style="@style/badam_top_bar_text"
-                android:text="@string/badam_game"/>
-            <include layout="@layout/badam_top_bar_back_right"/>
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:text="@string/badam_game"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/icon_back_right" />
+
+
         </LinearLayout>
+
+
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray" />
+
 
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_bg"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+
         <com.ziipin.pay.sdk.library.widget.BadamEditText
             android:id="@+id/edt_account"
-            style="@style/input_right_edit_text_style"
             android:layout_width="match_parent"
-            android:drawableLeft="@mipmap/delete"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:drawablePadding="8dp"
+            android:drawableRight="@mipmap/delete"
+            android:gravity="right|center_vertical"
             android:hint="@string/input_account_hint"
             android:imeOptions="actionNext"
             android:inputType="text" />
-        <include layout="@layout/badam_horizontal_line"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
         <EditText
             android:id="@+id/edt_pwd"
             style="@style/input_right_edit_text_style"
@@ -44,21 +105,28 @@
             android:hint="@string/input_pwd_hint"
             android:imeOptions="actionDone"
             android:inputType="textPassword" />
-        <include layout="@layout/badam_horizontal_line"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
         <FrameLayout
             android:id="@+id/fl_code"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:visibility="gone">
+
             <Button
                 android:id="@+id/btn_get_code"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="left|center_vertical"
                 android:layout_marginLeft="8dp"
-                android:background="@drawable/orange_btn_bg"
+                android:background="@drawable/orange_circle_btn_bg"
                 android:text="@string/get_verification_code"
-                android:textColor="@color/text_light" />
+                android:textColor="@color/orange" />
+
             <EditText
                 android:id="@+id/edt_verification_code"
                 android:layout_width="wrap_content"
@@ -71,21 +139,45 @@
                 android:inputType="number"
                 android:maxLength="8" />
         </FrameLayout>
+
+
     </LinearLayout>
+
 
     <Button
         android:id="@+id/btn_login_game"
-        style="@style/button_style"
-        android:text="@string/login_game"/>
-    <LinearLayout style="@style/badam_router_row">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/orange_btn_bg"
+        android:text="@string/login_game"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/tv_phone_register"
-            style="@style/badam_router_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="@string/go_phone_register"/>
+            android:text="@string/go_phone_register"
+            android:textColor="@color/white" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="10dp"
             android:layout_weight="1" />
+
     </LinearLayout>
+
 </LinearLayout>
