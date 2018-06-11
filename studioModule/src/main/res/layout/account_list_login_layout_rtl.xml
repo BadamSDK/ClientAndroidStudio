@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_root"
-    style="@style/badam_lyout">
+    style="@style/badam_lyout"
+    android:paddingBottom="0dp">
 
     <LinearLayout
         android:id="@+id/ll_title"
-        style="@style/badam_top_bar">
+        style="@style/badam_top_bar"
+        android:gravity="right">
 
         <TextView
             android:id="@+id/tv_account_login"
@@ -38,8 +40,6 @@
             android:id="@+id/lv_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:descendantFocusability="beforeDescendants"
             android:listSelector="@drawable/course_list_selector" />
 

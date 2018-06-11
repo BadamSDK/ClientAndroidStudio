@@ -32,28 +32,31 @@
         <include layout="@layout/badam_horizontal_line"/>
 
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="@dimen/badam_btn_height"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_get_code"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/orange_btn_bg"
                 android:text="@string/get_verification_code"
+                android:textSize="12sp"
                 android:textColor="@color/text_light" />
 
             <EditText
                 android:id="@+id/edt_verification_code"
                 style="@style/input_right_edit_text_style"
+                android:gravity="right|center_vertical"
                 android:hint="@string/input_verification_code_hint"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="number"
                 android:maxLength="8" />
-        </FrameLayout>
+        </LinearLayout>
 
         <include layout="@layout/badam_horizontal_line"/>
 
@@ -63,6 +66,8 @@
             android:hint="@string/input_new_pwd_hint"
             android:imeOptions="actionDone"
             android:inputType="textPassword" />
+
+        <include layout="@layout/badam_horizontal_line"/>
     </LinearLayout>
 
     <Button

@@ -50,6 +50,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="5dp"
+                android:textSize="12sp"
                 android:background="@drawable/orange_btn_bg"
                 android:text="@string/get_verification_code"
                 android:textColor="@color/text_light" />

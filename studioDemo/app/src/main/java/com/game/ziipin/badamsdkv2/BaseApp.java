@@ -17,12 +17,19 @@ public class BaseApp extends Application {
      * 通信的 加密字符串，同 {@link #mAppId}
      */
     public static final String mApiSecret = BadamContant.APISECRET;
+
+    public static final int LANG = BadamContant.LANG_TYPE_ZH;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        BadamSdk.getInstance().initApplication(this, mAppId, mApiSecret);
-        // 如果是 单机游戏需要接入闪屏广告, 则调用下面这行代码，否则请注释掉
-        BadamSdk.getInstance().splashTo(MainActivity.class);
+        // Logger.setEnable(true/false) 会启用/禁用 sdk 的日志信息, 调试阶段 设置为 true 可以看一些调试信息
+        // 默认值为 false，即默认不打印 sdk 日志信息
+        Logger.setEnable(true);
+        BadamSdk.getInstance().init(this, mAppId, mApiSecret, LANG);
+        // 仅单机需要接入闪屏广告，非单机请不要调用下面这一行，单机游戏调用下面这一行时, 同时需要参考 AndroidManitest.xml 中
+        // 关于闪屏 activity 的配置信息
+        // BadamSdk.getInstance().splashTo(MainActivity.class);
     }
 
     @Override

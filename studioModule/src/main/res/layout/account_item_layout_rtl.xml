@@ -6,6 +6,27 @@
     android:layout_marginTop="3dp"
     android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/ckb_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:button="@drawable/checkbox_style"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false" />
+
+
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical|right"
+        android:text="default uyghur"
+        android:textColor="@color/text_light" />
 
     <ImageView
         android:id="@+id/iv_head"
@@ -18,27 +39,6 @@
         android:layout_marginTop="3dp"
         android:gravity="center_vertical"
         android:src="@mipmap/personal_icon" />
-
-    <TextView
-        android:id="@+id/tv_account"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:text="default uyghur"
-        android:textColor="@color/text_light" />
-
-    <CheckBox
-        android:id="@+id/ckb_choose"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:button="@drawable/checkbox_style"
-        android:clickable="false"
-        android:focusableInTouchMode="false"
-        android:focusable="false" />
 
 
 </LinearLayout>

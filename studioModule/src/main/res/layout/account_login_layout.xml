@@ -1,60 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_root"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingRight="@dimen/badam_padding_lr"
-    android:paddingLeft="@dimen/badam_padding_lr"
-    android:background="@drawable/layout_bg"
-    android:orientation="vertical">
+    style="@style/badam_lyout">
 
     <LinearLayout
         android:id="@+id/ll_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/badam_top_bar_margin_bottom"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        style="@style/badam_top_bar">
 
         <LinearLayout
             android:id="@+id/ll_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <include layout="@layout/badam_top_bar_back"/>
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@mipmap/icon_back" />
 
             <TextView
                 android:id="@+id/tv_badam_game"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                style="@style/badam_top_bar_text"
                 android:layout_gravity="center_vertical"
-                android:text="@string/badam_game"
-                android:textColor="@color/text_dark"
-                android:textSize="@dimen/badam_title_text_size" />
+                android:text="@string/badam_game"/>
         </LinearLayout>
-
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
-            android:background="@color/white" />
-
+        <include layout="@layout/badam_vertical_line"/>
         <TextView
             android:id="@+id/tv_account_login"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/badam_top_bar_text"
             android:gravity="center_vertical"
-            android:text="@string/account_login"
-            android:textColor="@color/text_dark"
-            android:textSize="@dimen/badam_title_text_size" />
+            android:text="@string/account_login"/>
 
     </LinearLayout>
 
@@ -66,20 +38,12 @@
 
         <com.ziipin.pay.sdk.library.widget.BadamEditText
             android:id="@+id/edt_account"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/badam_input_item_height"
-            android:background="@null"
+            style="@style/input_left_edit_text_style"
             android:drawableRight="@mipmap/delete"
             android:gravity="left|center_vertical"
             android:hint="@string/input_account_hint"
             android:imeOptions="actionNext"
-            android:inputType="text"
-            android:textSize="@dimen/badam_input_text_size"
-            android:textColor="@color/text_dark"
-            android:textColorHint="@color/text_hint"
-            android:paddingLeft="8dp"
-            android:paddingRight="20dp"
-            android:paddingTop="3dp" />
+            android:inputType="text"/>
 
         <include layout="@layout/badam_horizontal_line"/>
 
@@ -91,12 +55,9 @@
 
             <EditText
                 android:id="@+id/edt_pwd"
+                style="@style/input_left_edit_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:background="@null"
-                android:textColor="@color/text_dark"
-                android:textSize="@dimen/badam_input_text_size"
                 android:hint="@string/input_pwd_hint"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword" />
@@ -107,6 +68,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="5dp"
+                android:textSize="12sp"
                 android:gravity="center_vertical"
                 android:text="@string/find_back_pwd"
                 android:textColor="@color/text_dark" />

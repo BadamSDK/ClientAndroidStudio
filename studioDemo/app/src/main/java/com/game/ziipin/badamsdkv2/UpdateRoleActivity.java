@@ -31,7 +31,7 @@ public class UpdateRoleActivity extends Activity {
 
         final UserBean user = (UserBean) getIntent().getSerializableExtra("user");
 
-        BadamSdk.getInstance().initActivity(this,  MainActivity.LANG, new InitListener() {
+        BadamSdk.getInstance().initActivity(this,  BaseApp.LANG, new InitListener() {
             @Override
             public void onInitResult(boolean success, int erro, String message) {
                 Logger.debug( success ? "初始化成功" : "初始化失败" + message);

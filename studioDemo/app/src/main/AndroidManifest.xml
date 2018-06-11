@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.game.ziipin.badamsdkv2">
-    <!-- 话费支付所需要的权限 start -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" /> <!-- 话费支付所需要的权限 end -->
     <!-- 爱贝支付所需要的权限 start -->
     <!-- 银联相关配置 -->
     <uses-permission android:name="android.permission.NFC" />
@@ -38,56 +24,23 @@
         android:name=".BaseApp"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Light.NoTitleBar">
-        <activity android:name="com.ziipin.pay.sdk.library.ui.BadamAdActivity">
+        <!--<activity android:name="com.ziipin.pay.sdk.library.ui.BadamAdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
+        </activity>-->
         <activity android:name=".MainActivity">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
 
         <activity android:name=".PayActivity"/>
         <activity android:name=".UpdateRoleActivity"/>
 
 
-        <!-- 话费支付设置 start -->
-        <!-- 边晓峰 -->
-        <activity
-            android:name="com.arcsoft.hpay100.HPaySdkActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:theme="@style/hpay_dialog_style" >
-        </activity>
-        <activity
-            android:name="com.arcsoft.hpay100.web.HPayWebActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:theme="@style/hpay_custom_confim_dialog" >
-        </activity>
-        <activity
-            android:name="com.arcsoft.hpay100.web.HPayWebFullActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation" >
-        </activity>
-
-        <service android:name="com.arcsoft.hpay100.client.HClientService" >
-            <intent-filter>
-                <action android:name="com.hclient.sdk.clientService" />
-            </intent-filter>
-        </service>
-
-        <receiver android:name="com.arcsoft.hpay100.client.HClientReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.intent.action.BATTERY_CHANGED" />
-            </intent-filter>
-        </receiver>
-
-        <!-- 话费支付设置 end -->
         <!-- 爱贝支付设置 start -->
         <!-- 爱贝 -->
         <!-- 银联支付相关配置 -->

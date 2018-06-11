@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@color/text_dark"
+    android:background="@color/theme"
     android:orientation="vertical">
     <TextView
         android:id="@+id/close_btn"

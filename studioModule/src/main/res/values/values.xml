@@ -15,15 +15,8 @@
     <color name="dialog_transparent_background">@android:color/transparent</color>
     <color name="edit_view_hint_text_color">#c0c0c5</color>
     <color name="edit_view_text_color">#000000</color>
+    <color name="get_sms_bnt_bg_color">#fe9c54</color>
     <color name="green">#FF00FF00</color>
-    <color name="hpay_bg_color">#FBF6F2</color>
-    <color name="hpay_cancel_wz_color">#737065</color>
-    <color name="hpay_edit_color">#D7CEC5</color>
-    <color name="hpay_getyzm_bg_color">#ECE5DF</color>
-    <color name="hpay_line_color">#E6DED7</color>
-    <color name="hpay_ok_wz_color">#007AFF</color>
-    <color name="hpay_title_color">#737065</color>
-    <color name="hpay_wxts_color">#B7B3AB</color>
     <color name="input_edit_content">#FF5B6E7C</color>
     <color name="input_edit_hint">#BBCBD8</color>
     <color name="input_hint">#FF282828</color>
@@ -48,9 +41,10 @@
     <color name="ipay_transparent">#00000000</color>
     <color name="ipay_transparent_45">#72000000</color>
     <color name="ipay_transparent_75">#bf000000</color>
-    <color name="layout_color">#ffffff</color>
-    <color name="light">@color/text_light</color>
+    <color name="layout_color">#404040</color>
+    <color name="light">@color/layout_color</color>
     <color name="light_gray">#c0c0c5</color>
+    <color name="login_btn_bg_color">#ff984d</color>
     <color name="lt_transparent_background">#00FFFFFF</color>
     <color name="orange">#ff9718</color>
     <color name="query_list_even_bg">#FFe8e8e8</color>
@@ -61,11 +55,13 @@
     <color name="query_list_odd_bg">#FFE6EFF6</color>
     <color name="red">#f00</color>
     <color name="tab_font">#FF086DBA</color>
-    <color name="text_dark">#cc000000</color>
-    <color name="text_hint">#66000000</color>
+    <color name="text_dark">#ccffffff</color>
+    <color name="text_hint">#aaaaaaaa</color>
     <color name="text_light">#ffffffff</color>
-    <color name="text_theme">#cc32aaff</color>
+    <color name="text_theme">#ff9718</color>
     <color name="theme">@color/text_theme</color>
+    <color name="theme_background">#00000000</color>
+    <color name="title_bar_color">#fcc816</color>
     <color name="transparent_background">#00FFFFFF</color>
     <color name="user_hint">#29323B</color>
     <color name="white">#ffffff</color>
@@ -80,15 +76,15 @@
     <dimen name="badam_btn_text_size_small">14sp</dimen>
     <dimen name="badam_btn_text_size_tiny">12sp</dimen>
     <dimen name="badam_dialog_padding_lr">12dp</dimen>
-    <dimen name="badam_input_item_height">60dp</dimen>
+    <dimen name="badam_input_item_height">48dp</dimen>
     <dimen name="badam_input_text_size">15sp</dimen>
     <dimen name="badam_line_height">0.5dp</dimen>
-    <dimen name="badam_padding_lr">12dp</dimen>
+    <dimen name="badam_padding_lr">0dp</dimen>
     <dimen name="badam_tip_text_size">14sp</dimen>
     <dimen name="badam_title_text_size">16sp</dimen>
-    <dimen name="badam_top_bar_margin_bottom">30dp</dimen>
-    <dimen name="dialog_margin_lr">24dp</dimen>
-    <dimen name="dialog_margin_tb">24dp</dimen>
+    <dimen name="badam_top_bar_margin_bottom">10dp</dimen>
+    <dimen name="dialog_margin_lr">16dp</dimen>
+    <dimen name="dialog_margin_tb">16dp</dimen>
     <dimen name="dialog_max_height">480dp</dimen>
     <dimen name="dialog_max_width">1000dp</dimen>
     <dimen name="dialog_min_height">240dp</dimen>
@@ -175,7 +171,7 @@
     <string name="account_or_pwd_format_false_fa"> نوع نام کاربری و رمز ورود صحیح نمی باش</string>
     <string name="account_or_pwd_format_false_kk">اتىڭىز نەمەسە قۇپيا نومىرڭىزدە قاتەلىك بار </string>
     <string name="account_or_pwd_format_false_uy">ھېسابات نومۇرى ياكى مەخپىي نومۇر فورماتى خاتا</string>
-    <string name="account_register">账号号注册</string>
+    <string name="account_register">账号注册</string>
     <string name="account_register_fa">ثبت نام کاربری</string>
     <string name="account_register_kk">ويىن ٴنومىرىن تىركەۋ</string>
     <string name="account_register_uy">ھېسابات نومۇرى تىزىملىتىش</string>
@@ -184,6 +180,12 @@
     <string name="ali_pay_kk">وتەم ٴاميانى</string>
     <string name="ali_pay_uy">ئالپاي</string>
     <string name="app_name">PackageManager</string>
+    <string name="app_register">登录拿红包 </string>
+    <string name="app_register_desc">话费流量等奖励将直接充入登录手机中，请认真填写。 </string>
+    <string name="app_register_desc_uy">سۆزلىشىش ھەققى،ئېقىم قاتارلىق مۇكاپاتلار
+بىۋاستە كىرگەن تېلېڧونغا قاچىلىنىدۇ،
+ئەستايىدىل تولدۇرۇڭ.</string>
+    <string name="app_register_uy">كىرىپ قىزىل بولاق ئېلىڭ</string>
     <string name="badam_game">巴达木游戏</string>
     <string name="badam_game_fa">بازی بادام</string>
     <string name="badam_game_kk">بادام ويىنى</string>
@@ -244,7 +246,7 @@
     <string name="find_back_pwd">找回密码</string>
     <string name="find_back_pwd_fa">بازیابی رمز عبور</string>
     <string name="find_back_pwd_kk">قۇپيا ٴنومىردى تابۋ</string>
-    <string name="find_back_pwd_uy">مەخپىي نومۇرنى تېپىۋېلىش</string>
+    <string name="find_back_pwd_uy">مەخپىي نومۇر ئىزدەش</string>
     <string name="find_pwd_success">找回密码成功！</string>
     <string name="find_pwd_success_fa">بازیابی رمز ورود با موفقیت انجام ش</string>
     <string name="find_pwd_success_kk">قۇپي نومىر تابىلدى</string>
@@ -488,7 +490,7 @@
     <string name="phone_login">手机号登录</string>
     <string name="phone_login_fa">ورود با شماره تلفن همراه</string>
     <string name="phone_login_kk">تەلەفون نومىرمەن ويىنعا كىرۋ</string>
-    <string name="phone_login_uy">تېلفۇن نومۇر بىلەن كىرىش</string>
+    <string name="phone_login_uy">تېلېفۇندا كىرىش</string>
     <string name="phone_register">手机号注册</string>
     <string name="phone_register_fa">ورود با تلفن همراه</string>
     <string name="phone_register_kk">تەلەفون تىركەۋ</string>
@@ -521,7 +523,7 @@
     <string name="resend">秒后重发</string>
     <string name="resend_fa">لطفاً کمی بعد دوباره ارسال کنید</string>
     <string name="resend_kk">سەكىنوتتان كەيىن قايتا جولدايدى</string>
-    <string name="resend_uy">سىكونتتىن كېيىن قايتا ئەۋەتىلىدۇ</string>
+    <string name="resend_uy">سېكۇنتتا قايتىلاڭ</string>
     <string name="second">%d秒</string>
     <string name="second_kk">سەكىنوت%d</string>
     <string name="second_uy">سېكۇنت%d</string>
@@ -588,8 +590,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:weightSum">1</item>
-        <item name="android:layout_marginBottom">22dp</item>
-        <item name="android:layout_marginTop">23dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">10dp</item>
         <item name="android:orientation">horizontal</item>
     </style>
     <style name="badam_router_text">
@@ -623,7 +625,7 @@
         <item name="android:activityOpenExitAnimation">@anim/badam_activity_out</item>
     </style>
     <style name="button_style">
-        <item name="android:layout_marginTop">36dp</item>
+        <item name="android:layout_marginTop">24dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/badam_btn_height</item>
         <item name="android:textColor">@color/text_light</item>
@@ -650,35 +652,15 @@
         <item name="android:textColorHint">@color/text_hint</item>
         <item name="android:background">@null</item>
     </style>
-    <style name="hpay_custom_confim_dialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:backgroundDimAmount">0.6</item>
-    </style>
-    <style name="hpay_dialog_style" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-    </style>
-    <style name="hpay_progress_dialog" parent="android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">#00000000</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:backgroundDimEnabled">false</item>
-    </style>
     <style name="input_left_edit_text_style" parent="edit_view_style">
         <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/badam_btn_height</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="input_right_code_edit_text_style" parent="edit_view_style">
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/badam_btn_height</item>
         <item name="android:layout_marginLeft">8dp</item>
         <item name="android:gravity">left|center_vertical</item>
@@ -693,16 +675,16 @@
     </style>
     <style name="ipay_dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
-        <!-- 边框 -->
+        
         <item name="android:windowIsFloating">true</item>
-        <!-- 是否浮现在activity之上 -->
+        
         <item name="android:windowIsTranslucent">false</item>
-        <!-- 半透明 -->
+        
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/ipay_transparent</item>
         <item name="android:background">@color/ipay_transparent</item>
         <item name="android:backgroundDimEnabled">true</item>
-        <!-- 模糊 -->
+        
         <item name="android:paddingTop">35dip</item>
         <item name="android:paddingBottom">35dip</item>
         <item name="android:paddingLeft">15dip</item>

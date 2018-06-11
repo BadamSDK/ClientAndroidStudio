@@ -16,9 +16,6 @@ import com.ziipin.pay.sdk.library.utils.Logger;
 public class MainActivity extends Activity implements View.OnClickListener{
     private UserBean mUserBean;
 
-
-    public static final int LANG = BadamContant.LANG_TYPE_ZH;
-
     BadamSdk sdk = (BadamSdk)BadamSdk.getInstance();
 
     LogoutReceiver logoutReceiver = new LogoutReceiver();
@@ -30,7 +27,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         Logger.debug("onCreate");
         setContentView(R.layout.activity_main);
 
-        sdk.initActivity(this, LANG, new InitListener() {
+        sdk.initActivity(this, BaseApp.LANG, new InitListener() {
             @Override
             public void onInitResult(boolean success, int erro, String message) {
                 Logger.debug( success ? "初始化成功" : "初始化失败" + message);
@@ -120,12 +117,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onResume() {
-        super.onResume();
-
-        //Logger.error("token:" + findViewById(R.id.btn_sdk_enter).getWindowToken());
         sdk.showWindow(this);
-        //Logger.debug("onResume, hasUser=" + (mUserBean != null));
-
+        super.onResume();
     }
 
     @Override
@@ -137,7 +130,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
     @Override
     protected void onDestroy() {
         sdk.hideWindow(this);
-        Logger.debug("onDestroy");
         unregisterReceiver(logoutReceiver);
         super.onDestroy();
     }
