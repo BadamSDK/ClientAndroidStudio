@@ -17,8 +17,16 @@ public class BaseApp extends Application {
      * 通信的 加密字符串，同 {@link #mAppId}
      */
     public static final String mApiSecret = BadamContant.APISECRET;
-
-    public static final int LANG = BadamContant.LANG_TYPE_ZH;
+    /**
+     * 语言使用, 这里使用的是维语，其他语言如下：
+     * {@link BadamContant#LANG_TYPE_ZH} 中文(默认）
+     * {@link BadamContant#LANG_TYPE_IR} 伊朗波斯语
+     * {@link BadamContant#LANG_TYPE_HE} 中国新疆 哈萨克语
+     * {@link BadamContant#LANG_TYPE_EN} 英文(当前实际上是中文）
+     *
+     * 建议：测试阶段使用中文(毕竟维语🐜文没几个人看得懂), 测试OK后使用对应都目标语言, 一般为维语
+     */
+    public static final int LANG = BadamContant.LANG_TYPE_WY;
 
     @Override
     public void onCreate() {

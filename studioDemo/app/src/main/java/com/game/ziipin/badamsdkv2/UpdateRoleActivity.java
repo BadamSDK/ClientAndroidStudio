@@ -16,20 +16,23 @@ import com.ziipin.pay.sdk.library.utils.ToastUtil;
 
 
 /**
- * 作者:邱雷(Hanker) on 18/1/17 16:30.
+ * 上报用户角色的 activity<br />
+ * 这里把上报角色 api 独立到一个 activity 的目的是为了拆分代码，减少 {@link MainActivity} 中的代码逻辑复杂度<br />
+ * 作者:邱雷(Hanker) on 18/1/17 16:30.<br />
  * Email:qiulei@ziipin@.com
  */
 
-public class UpdateRoleActivity extends Activity {
+public class UpdateRoleActivity extends Activity implements View.OnClickListener{
+    /**
+     * 角色级别输入文本框
+     */
     private EditText mLevel;
-    private Button mUpdateRole;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_role);
-
-        final UserBean user = (UserBean) getIntent().getSerializableExtra("user");
 
         BadamSdk.getInstance().initActivity(this,  BaseApp.LANG, new InitListener() {
             @Override
@@ -39,39 +42,42 @@ public class UpdateRoleActivity extends Activity {
         });
 
         mLevel = (EditText) findViewById(R.id.edt_level);
-        mUpdateRole = (Button) findViewById(R.id.btn_updateRole);
+        // 上报 按钮
+        Button mUpdateRole = (Button) findViewById(R.id.btn_updateRole);
+        if(mUpdateRole != null){
+            mUpdateRole.setOnClickListener(this);
+        }
 
-        mUpdateRole.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String levelStr = mLevel.getText().toString().trim();
-                if (TextUtils.isEmpty(levelStr) || ("").equals(levelStr)) {
-                    ToastUtil.showLongToast(UpdateRoleActivity.this, "请输入角色等级！");
-                } else if (user == null) {
-                    ToastUtil.showLongToast(UpdateRoleActivity.this, "请先登录！");
-                }
-                int level = Integer.parseInt(levelStr);
+    }
 
-                Logger.debug("Hanker", "mUpdateRole onclick...  openid = " + user.openid + "   token = " + user.token);
+    @Override
+    public void onClick(View v) {
+        final UserBean user = (UserBean) getIntent().getSerializableExtra("user");
+        String levelStr = mLevel.getText().toString().trim();
+        if (TextUtils.isEmpty(levelStr) || ("").equals(levelStr)) {
+            ToastUtil.showLongToast(this, "请输入角色等级！");
+        } else if (user == null) {
+            ToastUtil.showLongToast(this, "请先登录！");
+            return;
+        }
+        int level = Integer.parseInt(levelStr);
 
+        Logger.debug("mUpdateRole onclick...  openid = " + user.openid + "   token = " + user.token);
 
-                UserReq req = new UserReq(UpdateRoleActivity.this);
-                req.appid = BaseApp.mAppId;
-                req.openid = user.openid;
-                req.token = user.token;
-                req.roleid = "1234";//角色ID 客户端提供
-                req.name = "test";
-                req.level = level;
-                req.appArea = "test 1区";
-
-                updateRoleInfo(req);
-            }
-        });
+        UserReq req = new UserReq(this);
+        req.appid = BaseApp.mAppId;
+        req.openid = user.openid;
+        req.token = user.token;
+        req.roleid = "1234";//角色ID 客户端提供
+        req.name = "test";
+        req.level = level;
+        req.appArea = "test 1区";
+        updateRoleInfo(req);
     }
 
     private void updateRoleInfo(final UserReq userReq) {
 
-        BadamSdk.getInstance().addRole(UpdateRoleActivity.this, userReq, new InitListener() {
+        BadamSdk.getInstance().addRole(this, userReq, new InitListener() {
             @Override
             public void onInitResult(boolean succeed, int errorCode, String message) {
                 Logger.debug("updateRoleInfo ...  succeed = " + succeed + "     message = " + message);

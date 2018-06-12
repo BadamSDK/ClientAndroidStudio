@@ -28,12 +28,32 @@ import java.util.Locale;
  */
 
 public class PayActivity extends Activity implements PayResultListener, InitListener{
-
+    /**
+     * 支付金额, 新疆地区也使用人民币支付, 单位为分, 传入时记得进行单位转换。
+     * 关于商品价格的参考建议，请参考 <a href="https://sdk-doc.badambiz.com/chapter1-started/step3.3.html">商品价格设置</a><br />
+     * 测试时有专用的测试通道(不花钱的）,最好传入超过2元（200分）的金额，否则一些支付选项由于支付限额不会显示。
+     * 如果测试时没有看到微信和支付宝选项，此时最可能的问题是您运行的设备上没有安装 微信和支付宝。
+     */
     private int mAmount;
+    /**
+     * 用户透传数据,可为空，后台校验充值回调时 user data 会参与加密校验，建议不要传为空
+     */
     private String mUserData;
+    /**
+     * 订单ID，这里的订单ID为接入方游戏服务器中的商品ID，为了后续订单查询方便，请保证订单号在
+     * CP 系统内唯一
+     */
     private String mAppOrder;
+    /**
+     * 商品名，支付时显示给用户的名字
+     */
     private String mGoodsName;
     private EditText mAmountEdit;
+    /**
+     * 用户登录SDK后获取到的用户 openid。
+     * 需要注意的是，这里请一定要传入登录用户的 openid，否则后续用户投诉或咨询客服时
+     * 客服无法快速定位用户订单，增加一些不必要的人为BUG
+     */
     private String mOpenId;
 
     private BadamSdk sdk = (BadamSdk)BadamSdk.getInstance();
@@ -41,10 +61,8 @@ public class PayActivity extends Activity implements PayResultListener, InitList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // CP 兄弟, 开干前请花几秒钟看看头部的文本说明，会解决接入、支付测试过程中即将遇到的一些困扰
         setContentView(R.layout.activity_pay);
-
-        //mPayInterface = BadamSdk.getInstance();
-
         mAmountEdit = (EditText) findViewById(R.id.amount);
         User user = AccountManager.getInstance().getUserFromPrefList();
         if(user != null){
@@ -84,7 +102,10 @@ public class PayActivity extends Activity implements PayResultListener, InitList
         return true;
     }
 
-
+    /**
+     * 发起支付功能，这是用户可选择短信+现金支付方式(微信，支付宝，银联，QQ，京东支付等）。<br />
+     * 强烈建议使用 pay 方法发起支付（即 pay 和 payCash 中只选用 pay, payCash 是满足部分 CP 的需求而添加的缩减版的支付入口）
+     */
     public void onPay(View v) {
         // 支付
         if (updateMoney()){
@@ -92,7 +113,10 @@ public class PayActivity extends Activity implements PayResultListener, InitList
         }
     }
 
-
+    /**
+     * 强制用户使用现金支付（微信，支付宝，银联，QQ，京东支付等）。<br />
+     * 使用 payCash 发起的支付，短信支付选项不会出现在支付选项中。非特殊情况建议使用 pay 而不是 payCash
+     */
     public void onPayCash(View v) {
         // 支付现金
         if (updateMoney()){
@@ -108,9 +132,11 @@ public class PayActivity extends Activity implements PayResultListener, InitList
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // 支付时需要接收这一行为，必须传入
         sdk.onActivityResult(requestCode, resultCode, data);
+        // 下面处理自己业务逻辑内的行为
     }
-
+    // 下面三个回调为 sdk 处理 activity 生命周期内的资源初始化以及销毁，也请复写
     @Override
     protected void onPause() {
         super.onPause();
