@@ -64,7 +64,7 @@ public class PayActivity extends Activity implements PayResultListener, InitList
         // CP 兄弟, 开干前请花几秒钟看看头部的文本说明，会解决接入、支付测试过程中即将遇到的一些困扰
         setContentView(R.layout.activity_pay);
         mAmountEdit = (EditText) findViewById(R.id.amount);
-        User user = AccountManager.getInstance().getUserFromPrefList();
+        User user = AccountManager.getInstance().getUser();
         if(user != null){
             mAmount = 300;
             mUserData = "test";
