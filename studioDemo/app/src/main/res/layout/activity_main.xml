@@ -2,9 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="16dp"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/account_switch_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号切换"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:text="姓名"/>
+
+
+        <com.ziipin.pay.sdk.library.widget.RoundImageView
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/item_icon_size"
+            android:layout_height="@dimen/item_icon_size"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:src="@drawable/place_holder"
+            android:scaleType="centerCrop"
+            app:type="circle"
+            app:bordaoRadius="10dp"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_sdk_enter"

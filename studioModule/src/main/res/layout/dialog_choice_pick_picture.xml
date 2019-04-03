@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_minimum">
+
+
+    <TextView
+        android:id="@+id/take_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/take_picture"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/font_medium"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_gray"/>
+
+    <TextView
+        android:id="@+id/album_pick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/album_pick"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/font_medium"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/light_gray"/>
+
+    <TextView
+        android:id="@+id/cancel_pick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/cancel_pick"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/font_medium"/>
+</LinearLayout>

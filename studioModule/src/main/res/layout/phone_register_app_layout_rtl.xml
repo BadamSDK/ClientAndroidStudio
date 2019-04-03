@@ -28,7 +28,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@mipmap/app_aphone_register_content_bg"
             android:orientation="vertical">
 
             <LinearLayout
@@ -38,7 +38,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:orientation="vertical"
-                android:paddingTop="20dp">
+                android:paddingTop="15dp">
 
 
                 <EditText
@@ -51,6 +51,18 @@
                     android:hint="@string/input_phone_hint"
                     android:imeOptions="actionDone"
                     android:inputType="phone" />
+
+                <EditText
+                    android:id="@+id/edt_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/badam_btn_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@mipmap/edt_bg"
+                    android:drawableRight="@mipmap/icon_phone"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/input_pwd_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
 
 
                 <LinearLayout
@@ -91,10 +103,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/badam_btn_height"
                 android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginLeft="68dp"
                 android:layout_marginRight="68dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/app_login_btn_bg"
                 android:text="@string/login"
                 android:textColor="@color/white"
@@ -113,7 +125,7 @@
                 android:id="@+id/tv_app_register_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="@string/app_register_desc"

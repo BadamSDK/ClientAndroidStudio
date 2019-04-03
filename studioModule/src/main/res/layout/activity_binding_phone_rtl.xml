@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/layout_bg"
-    android:orientation="vertical"
-    android:paddingBottom="10dp">
+    style="@style/badam_lyout">
 
     <LinearLayout
         android:id="@+id/ll_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/badam_top_bar_margin_bottom"
+        android:layout_marginTop="18dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="15dp"
+            android:paddingTop="3dp"
+            android:src="@mipmap/delete"/>
+
+        <TextView
+            android:id="@+id/tv_binding_phone"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/binding_phone"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="12sp" />
 
 
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/ll_content"
-        android:layout_below="@+id/ll_title"
-        android:background="@color/light_gray" />
-
 
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text_bg"
         android:orientation="vertical"
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
@@ -48,44 +43,44 @@
 
         <EditText
             android:id="@+id/edt_phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:background="@null"
+            style="@style/input_right_edit_text_style"
             android:hint="@string/input_phone_hint"
             android:imeOptions="actionDone"
             android:inputType="phone" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/light_gray" />
+        <include layout="@layout/badam_horizontal_line" />
 
+        <EditText
+            android:id="@+id/edt_pwd"
+            style="@style/input_right_edit_text_style"
+            android:hint="@string/input_pwd_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+        <include layout="@layout/badam_horizontal_line" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-
-            <EditText
-                android:id="@+id/edt_verification_code"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:background="@null"
-                android:hint="@string/input_verification_code_hint"
-                android:inputType="number"
-                android:maxLength="8" />
+            android:layout_height="@dimen/badam_input_item_height">
 
             <Button
                 android:id="@+id/btn_get_code"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_gravity="right|center_vertical"
+                android:layout_height="@dimen/badam_btn_height_tiny"
+                android:layout_gravity="left|center_vertical"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/orange_circle_btn_bg"
+                android:background="@drawable/orange_btn_bg"
                 android:text="@string/get_verification_code"
-                android:textColor="@color/orange" />
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/badam_btn_text_size_tiny" />
+            <EditText
+                android:id="@+id/edt_verification_code"
+                style="@style/input_right_edit_text_style"
+                android:hint="@string/input_verification_code_hint"
+                android:inputType="number"
+                android:maxLength="8" />
+
+
         </FrameLayout>
 
 
@@ -95,14 +90,14 @@
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_height="@dimen/badam_btn_height"
         android:background="@drawable/orange_btn_bg"
+        android:layout_marginTop="30dp"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:text="@string/ok"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/badam_btn_text_size"
         android:textStyle="bold" />
 
 

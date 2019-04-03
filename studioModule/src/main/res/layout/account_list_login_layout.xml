@@ -86,6 +86,12 @@
             style="@style/badam_router_text"
             android:gravity="right"
             android:text="@string/go_register"/>
+        <TextView
+            android:id="@+id/tv_google_sign"
+            style="@style/badam_router_text"
+            android:gravity="left"
+            android:visibility="gone"
+            android:text="Google Login"/>
     </LinearLayout>
 
 </LinearLayout>

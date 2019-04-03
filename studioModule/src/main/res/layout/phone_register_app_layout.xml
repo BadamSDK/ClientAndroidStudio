@@ -28,7 +28,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@mipmap/app_aphone_register_content_bg"
             android:orientation="vertical">
 
             <LinearLayout
@@ -52,6 +52,17 @@
                     android:imeOptions="actionDone"
                     android:inputType="phone" />
 
+                <EditText
+                    android:id="@+id/edt_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/badam_btn_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@mipmap/edt_bg"
+                    android:drawableLeft="@mipmap/icon_phone"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/input_pwd_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

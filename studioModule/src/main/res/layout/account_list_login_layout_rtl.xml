@@ -86,6 +86,12 @@
             android:layout_width="0dp"
             android:layout_height="10dp"
             android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_google_sign"
+            style="@style/badam_router_text"
+            android:gravity="right"
+            android:visibility="gone"
+            android:text="Google Login"/>
     </LinearLayout>
 
 </LinearLayout>

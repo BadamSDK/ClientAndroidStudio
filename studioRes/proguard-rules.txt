@@ -56,6 +56,11 @@
     public <init>(android.content.Context,android.util.AttributeSet,int);
 }
 
+#   微信App支付
+-keep class com.tencent.mm.sdk.** {
+   *;
+}
+
 # 接口和java bean
 -keep class com.abc.def.ghi.**{*;}
 -keep class com.ziipin.pay.sdk.library.BadamSdk {*;}
@@ -65,12 +70,14 @@
 -keep class com.ziipin.pay.sdk.library.ui.**{*;}
 -keep class com.ziipin.pay.sdk.library.utils.**{*;}
 -keep class com.ziipin.pay.sdk.library.widget.**{*;}
--keep interface com.ziipin.pay.sdk.library.PayListener {*;}
+-keep public interface com.ziipin.pay.sdk.library.PayListener {*;}
 -keep class com.ziipin.pay.sdk.publish.PayListenerImpl{*;}
 -keep class com.ziipin.pay.sdk.publish.api.model.** {*;}
 -keep class com.ziipin.pay.sdk.publish.inner.bean.**{*;}
 -keep class com.ziipin.pay.sdk.publish.inner.sdkprocessor.**{*;}
 -keep class com.ziipin.pay.sdk.publish.common.**{*;}
+-keep class com.ziipin.pay.sdk.publish.dialog.**{*;}
+-keep class com.ziipin.pay.sdk.publish.util.CommonUtil{*;}
 
 # 广告相关
 -keep class com.ziipin.pay.sdk.publish.AdFragment

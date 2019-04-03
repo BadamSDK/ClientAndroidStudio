@@ -7,12 +7,23 @@
         style="@style/badam_top_bar"
         android:gravity="right">
 
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="0dp"
+            android:paddingTop="3dp"
+            android:paddingRight="15dp"
+            android:src="@mipmap/delete" />
+
+
         <TextView
             android:id="@+id/find_back_pwd"
-            style="@style/badam_top_bar_text"
-            android:gravity="center"
-            android:text="@string/find_back_pwd"/>
-        <include layout="@layout/badam_top_bar_back_right"/>
+            style="@style/badam_top_bar_text_rtl"
+            android:layout_weight="1"
+            android:text="@string/find_back_pwd" />
+
+        <include layout="@layout/badam_top_bar_back_right" />
     </LinearLayout>
 
 
@@ -29,7 +40,7 @@
             android:imeOptions="actionDone"
             android:inputType="phone" />
 
-        <include layout="@layout/badam_horizontal_line"/>
+        <include layout="@layout/badam_horizontal_line" />
 
 
         <LinearLayout
@@ -45,8 +56,8 @@
                 android:layout_marginRight="8dp"
                 android:background="@drawable/orange_btn_bg"
                 android:text="@string/get_verification_code"
-                android:textSize="12sp"
-                android:textColor="@color/text_light" />
+                android:textColor="@color/text_light"
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/edt_verification_code"
@@ -58,7 +69,7 @@
                 android:maxLength="8" />
         </LinearLayout>
 
-        <include layout="@layout/badam_horizontal_line"/>
+        <include layout="@layout/badam_horizontal_line" />
 
         <EditText
             android:id="@+id/edt_new_pwd"
@@ -67,11 +78,11 @@
             android:imeOptions="actionDone"
             android:inputType="textPassword" />
 
-        <include layout="@layout/badam_horizontal_line"/>
+        <include layout="@layout/badam_horizontal_line" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_ok"
         style="@style/button_style"
-        android:text="@string/ok"/>
+        android:text="@string/ok" />
 </LinearLayout>

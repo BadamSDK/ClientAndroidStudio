@@ -24,12 +24,6 @@
         android:name=".BaseApp"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Light.NoTitleBar">
-        <!--<activity android:name="com.ziipin.pay.sdk.library.ui.BadamAdActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +31,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PayActivity"/>
+        <activity android:name=".PayActivity" android:screenOrientation="landscape"/>
         <activity android:name=".UpdateRoleActivity"/>
 
 
@@ -92,15 +86,12 @@
             android:name="org.simalliance.openmobileapi"
             android:required="false" />
 
-
-
-        <activity
-            android:name="com.ziipin.pay.sdk.library.ui.FragmentContainerActivity"
-            android:theme="@style/myTransparent" />
-        <!-- badam WAP -->
+        <!-- badam WAP, 如果游戏是横屏的, 请在 本 activity 中加 android:screenOrientation="landscape" 强制使用 横屏-->
         <activity
             android:name="com.ziipin.pay.sdk.library.WebPayActivity"
             android:exported="false"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection|smallestScreenSize"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.WebPay">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>

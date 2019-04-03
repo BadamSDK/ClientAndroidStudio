@@ -25,5 +25,11 @@
         android:onClick="onPayCash"
         android:text="现金支付"/>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

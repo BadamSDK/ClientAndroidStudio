@@ -28,7 +28,7 @@
         android:text="default uyghur"
         android:textColor="@color/text_light" />
 
-    <ImageView
+    <com.ziipin.pay.sdk.library.widget.RoundImageView
         android:id="@+id/iv_head"
         android:layout_width="36dp"
         android:layout_height="36dp"

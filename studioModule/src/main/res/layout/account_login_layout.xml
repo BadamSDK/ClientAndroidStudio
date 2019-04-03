@@ -12,22 +12,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <include layout="@layout/badam_top_bar_back"/>
+
+            <include layout="@layout/badam_top_bar_back" />
 
 
             <TextView
                 android:id="@+id/tv_badam_game"
                 style="@style/badam_top_bar_text"
                 android:layout_gravity="center_vertical"
-                android:text="@string/badam_game"/>
+                android:text="@string/badam_game_uy" />
         </LinearLayout>
-        <include layout="@layout/badam_vertical_line"/>
+
+        <include layout="@layout/badam_vertical_line" />
+
         <TextView
             android:id="@+id/tv_account_login"
             style="@style/badam_top_bar_text"
-            android:gravity="center_vertical"
-            android:text="@string/account_login"/>
-
+            android:gravity="center_vertical|left"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:text="@string/account_login_uy" />
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="3dp"
+            android:paddingRight="3dp"
+            android:src="@mipmap/delete" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,9 +58,9 @@
             android:gravity="left|center_vertical"
             android:hint="@string/input_account_hint"
             android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:inputType="text" />
 
-        <include layout="@layout/badam_horizontal_line"/>
+        <include layout="@layout/badam_horizontal_line" />
 
 
         <FrameLayout
@@ -68,19 +83,20 @@
                 android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="5dp"
-                android:textSize="12sp"
                 android:gravity="center_vertical"
                 android:text="@string/find_back_pwd"
-                android:textColor="@color/text_dark" />
+                android:textColor="@color/text_dark"
+                android:textSize="12sp" />
         </FrameLayout>
-        <include layout="@layout/badam_horizontal_line"/>
+
+        <include layout="@layout/badam_horizontal_line" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_login_game"
         style="@style/button_style"
-        android:text="@string/login_game"/>
+        android:text="@string/login_game" />
 
     <LinearLayout style="@style/badam_router_row">
 
@@ -88,14 +104,17 @@
             android:id="@+id/tv_phone_login"
             style="@style/badam_router_text"
             android:gravity="left"
-            android:text="@string/phone_login"/>
-        <View android:layout_width="0dp"
+            android:text="@string/phone_login" />
+
+        <View
+            android:layout_width="0dp"
             android:layout_height="5dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/tv_register"
             style="@style/badam_router_text"
             android:gravity="right"
-            android:text="@string/go_register"/>
+            android:text="@string/go_register" />
     </LinearLayout>
 </LinearLayout>

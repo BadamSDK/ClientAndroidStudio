@@ -1,6 +1,7 @@
 package com.game.ziipin.badamsdkv2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.widget.EditText;
 import com.abc.def.ghi.InitListener;
 import com.ziipin.pay.sdk.library.BadamSdk;
 import com.ziipin.pay.sdk.library.modle.UserBean;
-import com.ziipin.pay.sdk.library.modle.UserReq;
 import com.ziipin.pay.sdk.library.utils.Logger;
 import com.ziipin.pay.sdk.library.utils.ToastUtil;
 
@@ -56,42 +56,30 @@ public class UpdateRoleActivity extends Activity implements View.OnClickListener
         String levelStr = mLevel.getText().toString().trim();
         if (TextUtils.isEmpty(levelStr) || ("").equals(levelStr)) {
             ToastUtil.showLongToast(this, "请输入角色等级！");
+            return;
         } else if (user == null) {
             ToastUtil.showLongToast(this, "请先登录！");
             return;
         }
         int level = Integer.parseInt(levelStr);
 
-        Logger.debug("mUpdateRole onclick...  openid = " + user.openid + "   token = " + user.token);
-
-        UserReq req = new UserReq(this);
-        req.appid = BaseApp.mAppId;
-        req.openid = user.openid;
-        req.token = user.token;
-        req.roleid = "1234";//角色ID 客户端提供
-        req.name = "test";
-        req.level = level;
-        req.appArea = "test 1区";
-        updateRoleInfo(req);
+        Logger.debug("mUpdateRole: openid = " + user.openid + "，token = " + user.token);
+        String name = "test";     // 角色名
+        String area = "test 1区"; // 区服
+        String roleId = "1234";   // 角色id
+        addRole(this, user.openid, name, area, roleId, level);
     }
 
-    private void updateRoleInfo(final UserReq userReq) {
-
-        BadamSdk.getInstance().addRole(this, userReq, new InitListener() {
-            @Override
-            public void onInitResult(boolean succeed, int errorCode, String message) {
-                Logger.debug("updateRoleInfo ...  succeed = " + succeed + "     message = " + message);
-                if (succeed) {
-                    ToastUtil.showLongToast(UpdateRoleActivity.this, "角色上报成功！");
-                } else {
-                    ToastUtil.showLongToast(UpdateRoleActivity.this, "角色上报失败！" + message);
-                }
-                finish();
-            }
-
-        });
 
 
+    private void addRole(Context context, String openId, String name, String area, String roleId, int level) {
+        BadamSdk.getInstance().addRole(context, BaseApp.APP_ID, openId, name, area, roleId, level);
     }
 
+    @Override
+    protected void onDestroy() {
+        BadamSdk.getInstance().onDestroy(this);
+        super.onDestroy();
+
+    }
 }

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_root"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/layout_bg"
-    android:paddingLeft="@dimen/badam_padding_lr"
-    android:paddingRight="@dimen/badam_padding_lr"
-    android:orientation="vertical">
+    style="@style/badam_lyout">
     <TextView
         android:id="@+id/tv_badam_game"
         android:layout_width="match_parent"
@@ -20,18 +15,21 @@
     <Button
         android:id="@+id/btn_register"
         style="@style/button_style"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/badam_btn_height"
         android:layout_marginTop="@dimen/badam_btn_row_gap"
         android:text="@string/register" />
 
     <Button
         android:id="@+id/btn_login"
         style="@style/button_style"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/badam_btn_height"
         android:layout_marginTop="@dimen/badam_btn_row_gap"
         android:text="@string/login" />
+
+    <Button
+        android:id="@+id/btn_google_login"
+        style="@style/button_style"
+        android:layout_marginTop="@dimen/badam_btn_row_gap"
+        android:visibility="gone"
+        android:text="Google  Login" />
 
     <TextView
         android:id="@+id/tv_play"

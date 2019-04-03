@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="3dp"
@@ -7,7 +8,7 @@
     android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal">
 
-    <ImageView
+    <com.ziipin.pay.sdk.library.widget.RoundImageView
         android:id="@+id/iv_head"
         android:layout_width="36dp"
         android:layout_height="36dp"
@@ -17,7 +18,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="3dp"
         android:gravity="center_vertical"
-        android:src="@mipmap/personal_icon" />
+        android:src="@mipmap/personal_icon"
+        app:type="circle"
+        app:bordaoRadius="10dp"/>
 
     <TextView
         android:id="@+id/tv_account"

@@ -28,5 +28,6 @@ Android Studio 有两种方式导入BadamSdk(下称SDK):
 
 
 ### 3. 当前版本号
-   V211 For China
+   V311 For China
+   当前版本服务端用户登录校验文档请查看[https://h5-doc.badambiz.com/chapter3-started/step1.html](https://h5-doc.badambiz.com/chapter3-started/step1.html), 其他部分不变, 客户端接入于之前21*版本也有差异，相对来说简化了很多，所有 api 在 demo 内都有样例, 发现差异时请及时参考 demo
  

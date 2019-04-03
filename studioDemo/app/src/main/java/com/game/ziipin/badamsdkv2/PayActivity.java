@@ -6,15 +6,22 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abc.def.ghi.InitListener;
 import com.abc.def.ghi.PayResultListener;
 import com.abc.def.ghi.Utils;
-import com.ziipin.pay.sdk.library.BadamSdk;
+import com.ziipin.pay.sdk.library.*;
+import com.ziipin.pay.sdk.library.common.BadamContant;
 import com.ziipin.pay.sdk.library.modle.User;
+import com.ziipin.pay.sdk.library.utils.Logger;
 import com.ziipin.pay.sdk.publish.common.AccountManager;
+import com.ziipin.pay.sdk.publish.util.CommonUtil;
 
+
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Locale;
 
 /**
@@ -23,6 +30,7 @@ import java.util.Locale;
  * 不需要实际支付 Money。在点击支付成功时后台也会给你们但服务器发送回调</b></li>
  * <li>只有在支付成功时支付后台才会给你们的服务器发送支付回调，所以在本 activity 中接收到支付结果为成功时请到你们的服务器核查支付结果</li>
  * </ul>
+ * 需要在对应的方法中调用 {@link BadamSdk#onResume(Activity)}, {@link BadamSdk#onPause(Activity)}, {@link BadamSdk#onDestroy(Activity)} 和 {@link BadamSdk#onActivityResult(int, int, Intent)} 这几个方法
  * 作者:邱雷(Hanker) on 17/11/22 14:47.<br />
  * Email:qiulei@ziipin.com
  */
@@ -77,6 +85,10 @@ public class PayActivity extends Activity implements PayResultListener, InitList
         // 支付初始化
         sdk.initActivity(this, BaseApp.LANG, this);
 
+        TextView text = (TextView) findViewById(R.id.textView);
+        text.setText("APP_ID:" + BadamContant.EXTRA_APP_ID + ", SUB:" + BaseApp.APP_ID);
+
+
     }
 
     @Override
@@ -107,9 +119,10 @@ public class PayActivity extends Activity implements PayResultListener, InitList
      * 强烈建议使用 pay 方法发起支付（即 pay 和 payCash 中只选用 pay, payCash 是满足部分 CP 的需求而添加的缩减版的支付入口）
      */
     public void onPay(View v) {
+        int ts = (int)(System.currentTimeMillis()/1000);
         // 支付
         if (updateMoney()){
-            sdk.pay(this,mAppOrder,mAmount,mGoodsName,mUserData,mOpenId,this);
+            sdk.paySub(this,BaseApp.APP_ID, mAppOrder,mAmount,mGoodsName,mUserData,mOpenId,ts,makeSign(ts),this);
         }
     }
 
@@ -118,10 +131,40 @@ public class PayActivity extends Activity implements PayResultListener, InitList
      * 使用 payCash 发起的支付，短信支付选项不会出现在支付选项中。非特殊情况建议使用 pay 而不是 payCash
      */
     public void onPayCash(View v) {
+        int ts = (int)(System.currentTimeMillis()/1000);
         // 支付现金
         if (updateMoney()){
-            sdk.payCash(this, mAppOrder, mAmount, mGoodsName, mUserData, mOpenId,this);
+            sdk.payCashSub(this,BaseApp.APP_ID,mAppOrder, mAmount, mGoodsName, mUserData, mOpenId,ts,makeSign(ts),this);
         }
+    }
+
+    /**
+     * 如果 BaseApp.APP_ID 和 BaseApp.mAppId 一样, 返回 "" 即可
+     */
+    private String makeSign(int ts){
+        HashMap<String, String> param = new HashMap<>();
+        param.put("appid", BaseApp.APP_ID);
+        param.put("app_order", mAppOrder);
+        param.put("amount", mAmount+"");
+        param.put("goods_name", mGoodsName);
+        param.put("user_data", mUserData);
+        param.put("ts", ts+"");
+        Object[] keys = param.keySet().toArray();
+        Arrays.sort(keys);
+        StringBuilder builder = new StringBuilder();
+        for(Object key : keys){
+            String value = param.get(key);
+            if(!TextUtils.isEmpty(value)) {
+               builder.append(key);
+               builder.append("=");
+               builder.append(value);
+               builder.append("&");
+            }
+        }
+        builder.append("key=" + BaseApp.APP_SECRET);
+        String str = builder.toString();
+        Logger.debug(str);
+        return CommonUtil.md5(str).toUpperCase();
     }
 
     @Override

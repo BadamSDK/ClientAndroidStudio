@@ -27,9 +27,7 @@
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:supportsRtl="true" >
-
-        <!-- 爱贝支付设置 start -->
+        android:supportsRtl="true" > <!-- 爱贝支付设置 start -->
         <!-- 爱贝 -->
         <!-- 银联支付相关配置 -->
         <uses-library
@@ -39,6 +37,18 @@
             android:name="com.iapppay.sdk.main.WebActivity"
             android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- badam WAP, 如果游戏是横屏的, 请在 本 activity 中加 android:screenOrientation="landscape" 强制使用 横屏-->
+        <activity
+            android:name="com.ziipin.pay.sdk.library.WebPayActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection|smallestScreenSize"
+            android:exported="false"
+            android:theme="@style/Theme.WebPay" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.badam.pay2sdk.WEBPAY" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.iapppay.ui.activity.PersonCenterActivity"
             android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
@@ -79,16 +89,6 @@
         <uses-library
             android:name="org.simalliance.openmobileapi"
             android:required="false" />
-
-        <receiver android:name="com.ziipin.apkmanager.manager.PackageReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REPLACED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

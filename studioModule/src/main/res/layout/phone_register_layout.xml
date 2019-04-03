@@ -30,6 +30,20 @@
             android:gravity="center"
             android:text="@string/phone_register" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="3dp"
+            android:paddingRight="3dp"
+            android:src="@mipmap/delete" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -46,6 +60,16 @@
             android:hint="@string/input_phone_hint"
             android:imeOptions="actionDone"
             android:inputType="phone" />
+
+        <include layout="@layout/badam_horizontal_line" />
+
+        <EditText
+            android:id="@+id/edt_pwd"
+            style="@style/input_left_edit_text_style"
+            android:layout_width="match_parent"
+            android:hint="@string/input_phone_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
 
         <include layout="@layout/badam_horizontal_line" />
 

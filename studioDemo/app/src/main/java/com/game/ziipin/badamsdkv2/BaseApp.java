@@ -16,7 +16,7 @@ public class BaseApp extends Application {
     /**
      * 通信的 加密字符串，同 {@link #mAppId}
      */
-    public static final String mApiSecret = BadamContant.APISECRET;
+    private static final String mApiSecret = BadamContant.APISECRET;
     /**
      * 语言使用, 这里使用的是维语，其他语言如下：
      * {@link BadamContant#LANG_TYPE_ZH} 中文(默认）
@@ -26,7 +26,11 @@ public class BaseApp extends Application {
      *
      * 建议：测试阶段使用中文(毕竟维语🐜文没几个人看得懂), 测试OK后使用对应都目标语言, 一般为维语
      */
-    public static final int LANG = BadamContant.LANG_TYPE_WY;
+    public static final int LANG = BadamContant.LANG_TYPE_ZH;
+
+    public static final String APP_ID = "ee1884a9ec0f7f50a7e39636c0d7106f"; // 添加 APp, 使用时请替换为自己的 appId
+
+    public static final String APP_SECRET = "cf9cab9b922b43dc26252ac25b42829b";
 
     @Override
     public void onCreate() {
@@ -34,15 +38,6 @@ public class BaseApp extends Application {
         // Logger.setEnable(true/false) 会启用/禁用 sdk 的日志信息, 调试阶段 设置为 true 可以看一些调试信息
         // 默认值为 false，即默认不打印 sdk 日志信息
         Logger.setEnable(true);
-        BadamSdk.getInstance().init(this, mAppId, mApiSecret, LANG);
-        // 仅单机需要接入闪屏广告，非单机请不要调用下面这一行，单机游戏调用下面这一行时, 同时需要参考 AndroidManitest.xml 中
-        // 关于闪屏 activity 的配置信息
-        // BadamSdk.getInstance().splashTo(MainActivity.class);
-    }
-
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-        Logger.debug("on Terminate");
+        BadamSdk.getInstance().initApplication(this, mAppId, mApiSecret);
     }
 }

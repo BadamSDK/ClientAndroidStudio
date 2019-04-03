@@ -12,20 +12,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <include layout="@layout/badam_top_bar_back"/>
+
+            <include layout="@layout/badam_top_bar_back" />
+
             <TextView
                 android:id="@+id/tv_badam_game"
                 style="@style/badam_top_bar_text"
                 android:layout_gravity="center_vertical"
-                android:text="@string/badam_game"/>
+                android:text="@string/badam_game" />
+
+
+            <include layout="@layout/badam_vertical_line" />
+
+            <TextView
+                android:id="@+id/tv_phone_login"
+                style="@style/badam_top_bar_text"
+                android:gravity="center_vertical"
+                android:text="@string/phone_login" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="3dp"
+                android:paddingRight="3dp"
+                android:src="@mipmap/delete" />
         </LinearLayout>
 
-        <include layout="@layout/badam_vertical_line"/>
-        <TextView
-            android:id="@+id/tv_phone_login"
-            style="@style/badam_top_bar_text"
-            android:gravity="center_vertical"
-            android:text="@string/phone_login"/>
 
     </LinearLayout>
 
@@ -42,10 +61,12 @@
             android:imeOptions="actionDone"
             android:inputType="phone" />
 
-        <include layout="@layout/badam_horizontal_line"/>
+        <include layout="@layout/badam_horizontal_line" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/badam_input_item_height">
+
             <EditText
                 android:id="@+id/edt_verification_code"
                 style="@style/input_left_edit_text_style"
@@ -62,20 +83,20 @@
                 android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="5dp"
-                android:textSize="12sp"
                 android:background="@drawable/orange_btn_bg"
                 android:text="@string/get_verification_code"
-                android:textColor="@color/text_light" />
+                android:textColor="@color/text_light"
+                android:textSize="12sp" />
         </FrameLayout>
 
-        <include layout="@layout/badam_horizontal_line"/>
+        <include layout="@layout/badam_horizontal_line" />
     </LinearLayout>
 
 
     <Button
         android:id="@+id/btn_login_game"
         style="@style/button_style"
-        android:text="@string/login_game"/>
+        android:text="@string/login_game" />
 
     <LinearLayout style="@style/badam_router_row">
 
@@ -83,7 +104,9 @@
             android:id="@+id/tv_account_login"
             style="@style/badam_router_text"
             android:gravity="left"
-            android:text="@string/account_login"/>
+            android:visibility="gone"
+            android:text="@string/account_login" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="10dp"
@@ -93,7 +116,7 @@
             android:id="@+id/tv_account_register"
             style="@style/badam_router_text"
             android:gravity="right"
-            android:text="@string/go_register"/>
+            android:text="@string/go_register" />
     </LinearLayout>
 
 </LinearLayout>
